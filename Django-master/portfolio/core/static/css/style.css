@@ -768,7 +768,13 @@ Media Queries
     -ms-transition: 0.5s;
     -o-transition: 0.5s;
   }
+  .project-container {
+    background-color: red;
+    display: grid;
+    gap: 1rem;
 
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  }
   .home-container,
   .contact-container {
     grid-template-columns: repeat(2, 1fr);
