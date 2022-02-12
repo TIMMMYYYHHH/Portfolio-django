@@ -1,0 +1,224 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>
+    {% block title %}
+
+    {% endblock title %}
+  </title>
+  <!-- FontAwesome -->
+  <script src="https://kit.fontawesome.com/6ab9ac06da.js" crossorigin="anonymous"></script>
+  <!-- IconScout -->
+  <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css" />
+  <!-- Swiper CSS -->
+  <link rel="stylesheet" href="{% static 'css/swiper-bundle.min.css' %}" />
+  <!-- Local CSS -->
+  <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+</head>
+
+<body>
+  <header class="header" id="header">
+    <nav class="nav container grid">
+      <a href="{% url 'index' %}" class="nav-logo">Timothy Morton</a>
+
+      <div class="nav-menu" id="nav-menu">
+        <ul class="nav-list grid">
+          <li class="nav-item">
+            <a href="#home" class="nav-link active-link">
+              <i class="uil uil-estate nav-icon"></i> Home
+            </a>
+          </li>
+
+
+
+
+
+          <li class="nav-item">
+            <a href="#portfolio" class="nav-link">
+              <i class="uil uil-scenery nav-icon"></i> Portfolio
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a href="#contact" class="nav-link">
+              <i class="uil uil-message nav-icon"></i> Contact
+            </a>
+          </li>
+        </ul>
+        <i class="uil uil-times nav-close" id="nav-close"></i>
+      </div>
+      <div class="nav-buttons">
+        <!-- Dark/light mode -->
+        <i class="uil uil-moon change-theme" id="theme-button"></i>
+        <div class="nav-toggle" id="nav-toggle">
+          <i class="uil uil-apps"></i>
+        </div>
+      </div>
+
+      <!-- Color change to come -->
+      <div class="colors">
+        <i class="uil uil-circle green" id="green"></i>
+        <i class="uil uil-circle red" id="red"></i>
+        <i class="uil uil-circle purple" id="purple"></i>
+        <i class="uil uil-circle blue" id="blue"></i>
+      </div>
+
+
+    </nav>
+  </header>
+  {% block content %}
+
+
+  {% endblock content %}
+
+  <!-- ============================
+  Contact me
+  ============================ -->
+  <section class="contact section" id="contact">
+    <h2 class="section-title">Contact Me</h2>
+    <span class="section-subtitle">Get in touch</span>
+
+    <div class="contact-container container grid">
+      <div>
+        <div class="contact-information">
+          <a href="https://twitter.com/TIMMMYYYHHH2" target="_blank">
+            <i class="uil uil-twitter-alt contact-icon"></i>
+
+            <div>
+              <h3 class="contact-title">Twitter</h3>
+              <span class="contact-subtitle">@TIMMMYYYHHH2 </span>
+          </a>
+        </div>
+
+      </div>
+
+      <div class="contact-information">
+        <i class="uil uil-envelope contact-icon"></i>
+
+        <div>
+          <h3 class="contact-title">Email</h3>
+          <span class="contact-subtitle">Timmymorton1@outlook.com</span>
+        </div>
+      </div>
+
+      <div class="contact-information">
+        <a href="https://bit.ly/3G7p1Cc" target="_blank">
+          <i class="uil uil-location-point contact-icon"></i>
+
+          <div>
+            <h3 class="contact-title">Location</h3>
+            <span class="contact-subtitle">South-Africa</span>
+        </a>
+      </div>
+    </div>
+    </div>
+    <form action="" class="contact-form grid">
+      <div class="contact-inputs grid">
+
+        <div class="contact-content">
+          <label for="" class="contact-label">Name</label>
+          <input type="text" class="contact-input">
+        </div>
+
+        <div class="contact-content">
+          <label for="" class="contact-label">Email</label>
+          <input type="email" class="contact-input">
+        </div>
+
+      </div>
+
+      <div class="contact-content">
+        <label for="" class="contact-label">Subject</label>
+        <input type="text" class="contact-input">
+      </div>
+
+      <div class="contact-content">
+        <label for="" class="contact-label">Message</label>
+        <textarea name="" id="" cols="0" rows="7" class="contact-input"></textarea>
+      </div>
+
+      <div>
+        <a href="#" class="button ">
+          Send Message
+          <i class="uil uil-message button-icon"></i>
+        </a>
+      </div>
+    </form>
+    </div>
+  </section>
+  </main>
+
+  <!-- ============================
+    Footer
+    ============================ -->
+  <footer class="footer">
+    <div class="footer-bg">
+      <div class="footer-container container grid">
+        <div>
+          <h2 class="footer-title">Timothy</h2>
+          <span class="footer-subtitle">Developer for fun</span>
+        </div>
+
+        <ul class="footer-links">
+          <li><a href="#home" class="footer-link">Home</a></li>
+          <li><a href="#portfolio" class="footer-link">Portfolio</a></li>
+          <li><a href="#contact" class="footer-link">Contact</a></li>
+        </ul>
+        <div class="footer-socials">
+          <a href="https://github.com/TIMMMYYYHHH" target="_blank" class="footer-social">
+            <i class="uil uil-github-alt"></i>
+          </a>
+          <a href="https://twitter.com/TIMMMYYYHHH2" target="_blank" class="footer-social">
+            <i class="uil uil-twitter-alt"></i>
+          </a>
+          <a href="https://codepen.io/TIMMMYYYHHH" target="_blank" class="footer-social">
+            <i class="fab fa-codepen"></i>
+          </a>
+
+        </div>
+      </div>
+      <p class="footer-copy">&#169; Made by Timothy 2022</p>
+    </div>
+  </footer>
+
+
+  <!-- +++++++++++++++++ -->
+  <!-- <div class="portfolio-card grid swiper-slide">
+  <img src="img/p3.jpg" alt="" class="portfolio-img">
+
+  <div class="portfolio-body">
+    <h3 class="portfolio-title">Rick and Morty char</h3>
+    <p class="portfolio-description">Website adaptable to all devices, with ui components and animated
+      interactions.</p>
+    <a href="#" class="button   portfolio-button">
+      Demo
+      
+    </a>
+  </div>
+</div> -->
+  <!-- +++++++++++++++++ -->
+  <!-- ============================
+    Scroll Top
+  ============================ -->
+  <a href="#" class="scroll-top" id="scroll-top">
+    <i class="uil uil-arrow-up scroll-top-icon"></i>
+  </a>
+
+
+
+  <!--Swiper JS -->
+  <script src="{% static 'js/swiper-bundle.min.js' %}"></script>
+  <!--Local JS-->
+  <script type="text/javascript" src="{% static 'js/script.js' %}"></script>
+  <!-- {% static 'my_app/example.jpg' %} -->
+
+</body>
+</body>
+
+
+</html>
