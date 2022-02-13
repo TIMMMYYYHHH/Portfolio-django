@@ -60,188 +60,35 @@ Timothy Portfolio
     <span class="section-subtitle">Latests projects</span>
 
 
-    <div class="portfolio-container container swiper">
-      <div class="swiper-wrapper">
-        <!-- Project 1 -->
-        <div class="portfolio-card grid swiper-slide">
 
-          <div class="portfolio-card-img-container">
-
-            <img class="portfolio-img" src="{% static 'https://bit.ly/3t9fsyY' %}" alt="">
-            <div class="portfolio-language">
-              <i class="fab fa-html5 portfolio-language-icon"></i>
-              <i class="fab fa-css3-alt portfolio-language-icon"></i>
-              <i class="fab fa-python portfolio-language-icon"></i>
-            </div>
-          </div>
-
-          <div class="portfolio-body">
-            <h3 class="portfolio-title">Modern Website</h3>
-            <p class="portfolio-description">Website adaptable to all devices, with ui components and animatedWebsite
-              adaptable to all devices, with ui components and animatedWebsite adaptable to all devices, with ui
-              components and animated
-              interactions.</p>
-            <a href="#" class="button portfolio-button">
-              Learn More
-            </a>
-            <a href="#" class="button portfolio-button">
-              Demo
-
-            </a>
-          </div>
-        </div>
-
-
-
-        <!-- Project 2 -->
-        <div class="portfolio-card grid swiper-slide">
-          <div class="portfolio-card-img-container">
-
-            <img class="portfolio-img" src="{% static 'https://bit.ly/3HKgVzL' %}" alt="">
-            <div class="portfolio-language">
-              <i class="fab fa-html5 portfolio-language-icon"></i>
-              <i class="fab fa-css3-alt portfolio-language-icon"></i>
-              <i class="fab fa-python portfolio-language-icon"></i>
-            </div>
-
-          </div>
-
-          <div class="portfolio-body">
-            <h3 class="portfolio-title">JavaScript Game</h3>
-            <p class="portfolio-description">Website adaptable to all devices, with ui components and animated
-              interactions.</p>
-            <a href="#" class="button   portfolio-button">
-              Learn More
-            </a>
-            <a href="#" class="button   portfolio-button">
-              Demo
-
-            </a>
-          </div>
-        </div>
-
-        <!-- Project 3 -->
-        <div class="portfolio-card grid swiper-slide">
-          <div class="portfolio-card-img-container">
-
-            <img class="portfolio-img" src="{% static 'img/p3.jpg' %}" alt="">
-            <div class="portfolio-language">
-              <i class="fab fa-html5 portfolio-language-icon"></i>
-              <i class="fab fa-css3-alt portfolio-language-icon"></i>
-              <i class="fab fa-python portfolio-language-icon"></i>
-            </div>
-
-          </div>
-          <div class="portfolio-body">
-            <h3 class="portfolio-title">Rick and Morty Char</h3>
-            <p class="portfolio-description">Website adaptable to all devices, with ui components and animated
-              interactions.</p>
-            <a href="#" class="button   portfolio-button">
-              Learn More
-            </a>
-            <a href="#" class="button   portfolio-button">
-              Demo
-
-            </a>
-          </div>
-        </div>
-
-      </div>
-      <div class="swiper-button-next">
-        <i class="uil uil-angle-right swiper-portfolio-icon"></i>
-      </div>
-      <div class="swiper-button-prev">
-        <i class="uil uil-angle-left swiper-portfolio-icon"></i>
-      </div>
-      <div class="swiper-pagination"></div>
-    </div>
-
-
-    <!-- Destkop -->
-    <div class="portfolio-container-responsive container ">
+    <div class="container project-container">
 
       {% for post  in posts  %}
-      <div class="portfolio-card grid">
-        <div class="portfolio-card-img-container">
-          <img class="portfolio-img" src="https://bit.ly/3t9fsyY" alt="">
-          <div class="portfolio-language">
-            <i class="fab fa-html5 portfolio-language-icon"></i>
-            <i class="fab fa-css3-alt portfolio-language-icon"></i>
-            <i class="fab fa-python portfolio-language-icon"></i>
-          </div>
+      <div class="project-card">
+        <div class="project-card-img">
+          <a href="{% url 'post_detail' post.slug %}">
+            <img src="{{ post.img }}" alt="">
+          </a>
+          <span class="project-card-date">
+            {{post.created_at|date:'M d, Y'}}
+          </span>
         </div>
-        <div class="portfolio-body">
-          <h3 class="portfolio-title">{{ post.title }}</h3>
-          <p class="portfolio-description">{{post.intro}}</p>
-          <a href="{% url 'post_detail' post.slug %}" class="button portfolio-button">
-            Learn More
-          </a>
-          <a href="#" class="button portfolio-button">
-            Demo
-
-          </a>
+        <div class="project-card-content">
+          <div class="project-card-tag">
+            <a href="#" class="tag"><i class="fab fa-html5 portfolio-language-icon"></i></a>
+            <a href="#" class="tag"><i class="fab fa-css3-alt portfolio-language-icon"></i></a>
+            <a href="#" class="tag"><i class="fab fa-python portfolio-language-icon"></i></a>
+          </div>
+          <h3 class="project-card-title">
+            <a href="{% url 'post_detail' post.slug %}">
+              {{ post.title }}
+            </a>
+          </h3>
+          <p>{{post.intro|truncatechars:150}}</p>
         </div>
       </div>
       {% endfor %}
 
-
-      <!-- Project 2 -->
-      <!-- <div class=" portfolio-card grid ">
-        <div class=" portfolio-card-img-container">
-
-            <img class="portfolio-img" src="https://bit.ly/3HKgVzL" alt="">
-            <div class=" portfolio-language">
-              <i class="fab fa-html5 portfolio-language-icon"></i>
-              <i class="fab fa-css3-alt portfolio-language-icon"></i>
-              <i class="fab fa-python portfolio-language-icon"></i>
-            </div>
-
-        </div>
-
-        <div class="portfolio-body">
-          <h3 class="portfolio-title">JavaScript Game</h3>
-          <p class="portfolio-description">Website adaptable to all devices, with ui components and animated
-            interactions.</p>
-          <a href="#" class="button   portfolio-button">
-            Learn More
-          </a>
-          <a href="#" class="button   portfolio-button">
-            Demo
-
-          </a>
-        </div>
-      </div> -->
-
-      <!-- Project 3 -->
-      <!-- <div class="portfolio-card grid ">
-        <div class="portfolio-card-img-container">
-
-          <img class="portfolio-img" src="{% static 'img/p3.jpg' %}" alt="">
-          <div class="portfolio-language">
-            <i class="fab fa-html5 portfolio-language-icon"></i>
-            <i class="fab fa-css3-alt portfolio-language-icon"></i>
-            <i class="fab fa-python portfolio-language-icon"></i>
-          </div>
-
-        </div>
-        <div class="portfolio-body">
-          <h3 class="portfolio-title">Rick and Morty char</h3>
-          <p class="portfolio-description">Website adaptable to all devices, with ui components and animated
-            interactions.</p>
-          <a href="#" class="button   portfolio-button">
-            Learn More
-          </a>
-          <a href="#" class="button   portfolio-button">
-            Demo
-
-          </a>
-        </div>
-      </div> -->
-
-
-
-
     </div>
-
   </section>
   {% endblock content %}

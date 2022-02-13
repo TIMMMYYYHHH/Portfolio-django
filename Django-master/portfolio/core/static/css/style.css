@@ -28,7 +28,7 @@
   --h1-font-size: 2.4rem;
   --h2-font-size: 1.5rem;
   --h3-font-size: 1.25rem;
-  --card-title-size: 1rem;
+  --card-title-size: 1.25rem;
   --normal-font-size: 0.983rem;
   --small-font-size: 0.813rem;
   --smaller-font-size: 0.75rem;
@@ -847,6 +847,21 @@ Media Queries
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 3rem;
+  }
+  .project-container-detail {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
+  }
+  .grid-project-detail {
+    display: grid;
+    /* grid-column: 1 / 3; */
+    grid-column-start: span 2;
+    gap: 3rem;
+  }
+  .project-detail-img {
+    height: 2rem;
+    width: 4rem;
   }
 }
 

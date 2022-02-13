@@ -12,12 +12,12 @@
 
 
   <div class="container project-container">
-    <div class="grid-project">
+    <div class="grid-project-detail">
       {% for post  in posts  %}
       <div class="project-card">
         <div class="project-card-img">
           <a href="{% url 'post_detail' post.slug %}">
-            <img src="{{ post.img }}" alt="">
+            <img src="{{ post.img }}" alt="" class=="project-detail-img">
           </a>
           <span class="project-card-date">
             {{post.created_at|date:'M d, Y'}}
