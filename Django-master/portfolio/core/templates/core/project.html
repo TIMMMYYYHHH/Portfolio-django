@@ -50,7 +50,11 @@
             </a>
           </div>
           <div class="latest-project-card-content">
-            <h3 class="latest-project-card-title">{{ post.title }}</h3>
+            <h3 class="latest-project-card-title">
+              <a href="{% url 'post_detail' post.slug %}">
+                {{ post.title }}
+              </a>
+            </h3>
             <span class="latest-project-card-date"> {{post.created_at|date:'M d, Y'}}</span>
           </div>
         </div>

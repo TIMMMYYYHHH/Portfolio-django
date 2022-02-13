@@ -485,7 +485,8 @@ Project
   margin-bottom: 0.5rem;
   font-weight: 900;
 }
-.project-card-title a:hover {
+.project-card-title a:hover,
+.latest-project-card-title a:hover {
   color: var(--first-color);
 }
 .project-card-content p {
@@ -534,6 +535,11 @@ Project
   height: 4.875rem;
   -webkit-transition: all 0.9s ease-in-out;
   transition: all 0.9s ease-in-out;
+}
+
+.latest-project-card-img img:hover {
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
 }
 
 .latest-project-card-title {

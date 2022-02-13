@@ -6,52 +6,61 @@
 
 {% block content %}
 <section class="detail section" id="portfolio">
-  <div class="container">
-
-
-    <h1>{{post.title}}</h1>
-  </div>
-  <img src="" alt="">
-  <div class="header">
-    <h2>Blog Name</h2>
-  </div>
-
-  <div class="row">
-    <div class="leftcolumn">
-      <div class="card">
-        <h2>TITLE HEADING</h2>
-        <h5>Title description, Dec 7, 2017</h5>
-        <div class="fakeimg" style="height:200px;">Image</div>
-        <p>Some text..</p>
-      </div>
-      <div class="card">
-        <h2>TITLE HEADING</h2>
-        <h5>Title description, Sep 2, 2017</h5>
-        <div class="fakeimg" style="height:200px;">Image</div>
-        <p>Some text..</p>
-      </div>
-    </div>
-    <div class="rightcolumn">
-      <div class="card">
-        <h2>About Me</h2>
-        <div class="fakeimg" style="height:100px;">Image</div>
-        <p>Some text about me in culpa qui officia deserunt mollit anim..</p>
-      </div>
-      <div class="card">
-        <h3>Popular Post</h3>
-        <div class="fakeimg">Image</div><br>
-        <div class="fakeimg">Image</div><br>
-        <div class="fakeimg">Image</div>
-      </div>
-      <div class="card">
-        <h3>Follow Me</h3>
-        <p>Some text..</p>
+  <div class="container project-container">
+    <div class="grid-project">
+      <div class="project-card">
+        <div class="project-card-img">
+          <a href="{% url 'post_detail' post.slug %}">
+            <img src="{{ post.img }}" alt="">
+          </a>
+          <span class="project-card-date">
+            {{post.created_at|date:'M d, Y'}}
+          </span>
+        </div>
+        <div class="project-card-content">
+          <div class="project-card-tag">
+            <a href="#" class="tag"><i class="fab fa-html5 portfolio-language-icon"></i></a>
+            <a href="#" class="tag"><i class="fab fa-css3-alt portfolio-language-icon"></i></a>
+            <a href="#" class="tag"><i class="fab fa-python portfolio-language-icon"></i></a>
+          </div>
+          <h3 class="project-card-title">
+            <a href="{% url 'post_detail' post.slug %}">
+              {{ post.title }}
+            </a>
+          </h3>
+          <p>{{post.intro|truncatechars:150}}</p>
+        </div>
       </div>
     </div>
+    <div class="grid-side">
+      <div class="container widget-container">
+        <h3 class="widget-title">Latest Projects</h3>
+        {% for post  in posts  %}
+        <div class="latest-project-card">
+          <div class="latest-project-card-img">
+            <a href="{% url 'post_detail' post.slug %}">
+              <img src="{{ post.img }}" alt="">
+            </a>
+          </div>
+          <div class="latest-project-card-content">
+            <h3 class="latest-project-card-title">{{ post.title }}</h3>
+            <span class="latest-project-card-date"> {{post.created_at|date:'M d, Y'}}</span>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+
+      <div class="container widget-container">
+        <h3 class="widget-title">Tags</h3>
+        <div class="tag-container">
+          <a href="#" class="tag"><i class="fab fa-html5 portfolio-language-icon"></i> - HTML</a>
+          <a href="#" class="tag"><i class="fab fa-css3-alt portfolio-language-icon"></i> - CSS</a>
+          <a href="#" class="tag"><i class="fab fa-python portfolio-language-icon"></i> - Python</a>
+        </div>
+      </div>
+    </div>
   </div>
 
-  <div class="footer">
-    <h2>Footer</h2>
-  </div>
+
 </section>
 {% endblock content %}
