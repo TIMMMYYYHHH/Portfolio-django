@@ -6,10 +6,12 @@
 
 {% block content %}
 <section class="detail section" id="portfolio">
+  <h2 class="section-title">Project {{post.id}}</h2>
+  <span class="section-subtitle"></span>
   <div class="container project-container-detail">
     <div class="grid-project-detail">
       <div class="project-card">
-        <div class="project-card-img">
+        <div class="project-card-img detail-img">
           <a href="{% url 'post_detail' post.slug %}">
             <img src="{{ post.img }}" alt="">
           </a>
@@ -23,19 +25,20 @@
             <a href="#" class="tag"><i class="fab fa-css3-alt portfolio-language-icon"></i></a>
             <a href="#" class="tag"><i class="fab fa-python portfolio-language-icon"></i></a>
           </div>
-          <h3 class="project-card-title">
+          <h3 class="project-card-title-detail">
             <a href="{% url 'post_detail' post.slug %}">
               {{ post.title }}
             </a>
           </h3>
-          <p>{{post.intro|truncatechars:150}}</p>
+          <p>{{post.intro}}</p>
+          <p>{{ post.body }}</p>
         </div>
       </div>
     </div>
     <div class="grid-side">
       <div class="container widget-container">
         <h3 class="widget-title">Latest Projects</h3>
-        {% for post  in posts  %}
+        {% for post in latestPosts  %}
         <div class="latest-project-card">
           <div class="latest-project-card-img">
             <a href="{% url 'post_detail' post.slug %}">
@@ -43,7 +46,11 @@
             </a>
           </div>
           <div class="latest-project-card-content">
-            <h3 class="latest-project-card-title">{{ post.title }}</h3>
+            <h3 class="latest-project-card-title">
+              <a href="{% url 'post_detail' post.slug %}">
+                {{ post.title }}
+              </a>
+            </h3>
             <span class="latest-project-card-date"> {{post.created_at|date:'M d, Y'}}</span>
           </div>
         </div>
@@ -56,6 +63,7 @@
           <a href="#" class="tag"><i class="fab fa-html5 portfolio-language-icon"></i> - HTML</a>
           <a href="#" class="tag"><i class="fab fa-css3-alt portfolio-language-icon"></i> - CSS</a>
           <a href="#" class="tag"><i class="fab fa-python portfolio-language-icon"></i> - Python</a>
+          <a href="#" class="tag"><i class="fab fa-brands fa-python"></i> - AngularJS</a>
         </div>
       </div>
     </div>

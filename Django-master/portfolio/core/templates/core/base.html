@@ -29,15 +29,10 @@
       <div class="nav-menu" id="nav-menu">
         <ul class="nav-list grid">
           <li class="nav-item">
-            <a href="#home" class="nav-link active-link">
+            <a href="{% url 'index' %}" class="nav-link active-link">
               <i class="uil uil-estate nav-icon"></i> Home
             </a>
           </li>
-
-
-
-
-
           <li class="nav-item">
             <a href="#portfolio" class="nav-link">
               <i class="uil uil-scenery nav-icon"></i> Portfolio
@@ -52,7 +47,18 @@
         </ul>
         <i class="uil uil-times nav-close" id="nav-close"></i>
       </div>
+
       <div class="nav-buttons">
+        <div class="color-dropdown">
+          <i class="uil uil-paint-tool"></i>
+          <!-- Color change to come -->
+          <div class="colors">
+            <i class="uil uil-circle green" id="green"></i>
+            <i class="uil uil-circle red" id="red"></i>
+            <i class="uil uil-circle purple" id="purple"></i>
+            <i class="uil uil-circle blue" id="blue"></i>
+          </div>
+        </div>
         <!-- Dark/light mode -->
         <i class="uil uil-moon change-theme" id="theme-button"></i>
         <div class="nav-toggle" id="nav-toggle">
@@ -60,13 +66,7 @@
         </div>
       </div>
 
-      <!-- Color change to come -->
-      <div class="colors">
-        <i class="uil uil-circle green" id="green"></i>
-        <i class="uil uil-circle red" id="red"></i>
-        <i class="uil uil-circle purple" id="purple"></i>
-        <i class="uil uil-circle blue" id="blue"></i>
-      </div>
+
 
 
     </nav>
@@ -187,21 +187,6 @@
   </footer>
 
 
-  <!-- +++++++++++++++++ -->
-  <!-- <div class="portfolio-card grid swiper-slide">
-  <img src="img/p3.jpg" alt="" class="portfolio-img">
-
-  <div class="portfolio-body">
-    <h3 class="portfolio-title">Rick and Morty char</h3>
-    <p class="portfolio-description">Website adaptable to all devices, with ui components and animated
-      interactions.</p>
-    <a href="#" class="button   portfolio-button">
-      Demo
-      
-    </a>
-  </div>
-</div> -->
-  <!-- +++++++++++++++++ -->
   <!-- ============================
     Scroll Top
   ============================ -->
