@@ -28,6 +28,7 @@
   --h1-font-size: 2.4rem;
   --h2-font-size: 1.5rem;
   --h3-font-size: 1.25rem;
+  --card-title-size: 1rem;
   --normal-font-size: 0.983rem;
   --small-font-size: 0.813rem;
   --smaller-font-size: 0.75rem;
@@ -39,8 +40,8 @@
   :root {
     --h1-font-size: 2.6rem;
     --h2-font-size: 2.25rem;
-
     --h3-font-size: 1.5rem;
+    --card-title-size: 1.25rem;
     --normal-font-size: 1rem;
     --small-font-size: 0.875rem;
     --smaller-font-size: 0.813rem;
@@ -78,7 +79,7 @@ Button dark/light
   color: var(--first-color);
 }
 /* ============================
-Base
+Global
 ============================ */
 
 * {
@@ -443,16 +444,12 @@ Project
   position: relative;
   border-radius: 1.25rem;
   overflow: hidden;
-  width: 21.041rem;
-  height: 13.78rem;
-  -webkit-box-shadow: 0 10px 10px rgba(0, 0, 0, 0.08), 0 0 0 transparent;
-  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.08), 0 0 0 transparent;
 }
 .project-card-img img {
   -webkit-transition: all 0.9s ease-in-out;
   transition: all 0.9s ease-in-out;
   max-width: 100%;
-  height: auto;
+  /* height: auto; */
   vertical-align: middle;
   border-style: none;
 }
@@ -465,13 +462,17 @@ Project
 .project-card-date {
   position: absolute;
   top: 0.5rem;
-  right: 1rem;
+  right: 0.5rem;
   backdrop-filter: blur(3px);
   background-color: rgba(0, 0, 0, 0.112);
   box-shadow: rgba(0, 0, 0, 0.3) 2px 8px 8px;
   padding: 0.313rem 0.625rem;
   font-size: 0.8em;
-  border-radius: 1.25rem;
+  border-radius: 0.7rem;
+  -webkit-border-radius: 0.7rem;
+  -moz-border-radius: 0.7rem;
+  -ms-border-radius: 0.7rem;
+  -o-border-radius: 0.7rem;
 }
 
 .project-card-tag {
@@ -480,7 +481,7 @@ Project
 }
 
 .project-card-title {
-  font-size: var(--normal-font-size);
+  font-size: var(--card-title-size);
   margin-bottom: 0.5rem;
   font-weight: 900;
 }
@@ -488,15 +489,18 @@ Project
   color: var(--first-color);
 }
 .project-card-content p {
+  font-size: var(--small-font-size);
   filter: brightness(80%);
   -webkit-filter: brightness(80%);
 }
 /* Latest Project */
+
 .widget-container {
-  background-color: hsl(var(--hue-color), 28%, 9%);
+  background-color: hsl(var(--hue-color), 28%, 19%);
   display: block;
   padding: 1.875rem;
   height: fit-content;
+  margin: 0;
   margin-bottom: 3.75rem;
   border-radius: 1.25rem !important;
   -webkit-border-radius: 1.25rem !important;
@@ -506,6 +510,7 @@ Project
 }
 .widget-title {
   margin-bottom: 30px;
+  font-size: var(--card-title-size);
 }
 
 .latest-project-card {
@@ -520,27 +525,29 @@ Project
   position: relative;
   border-radius: 20px;
   overflow: hidden;
-  -webkit-box-shadow: 0 10px 10px rgba(0, 0, 0, 0.08), 0 0 0 transparent;
-  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.08), 0 0 0 transparent;
 }
 
 .latest-project-card-img img {
   object-fit: cover;
   border-radius: 20px;
-  width: 90px;
-  height: 90px;
+  width: 4.875rem;
+  height: 4.875rem;
   -webkit-transition: all 0.9s ease-in-out;
   transition: all 0.9s ease-in-out;
 }
 
+.latest-project-card-title {
+  font-size: var(--small-font-size);
+}
 .latest-project-card-content {
   width: 80%;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  font-size: var(--normal-font-size);
 }
-
+.latest-project-card-date {
+  font-size: var(--smaller-font-size);
+}
 .tag-container {
   display: flex;
   flex-direction: column;
@@ -710,6 +717,7 @@ Media Queries
   .container {
     margin-left: auto;
     margin-right: auto;
+    max-width: 768px;
   }
   .section {
     padding: 6rem 0 2rem;
@@ -763,7 +771,11 @@ Media Queries
     -ms-transition: 0.5s;
     -o-transition: 0.5s;
   }
-
+  .grid-project {
+    display: grid;
+    grid-gap: 1rem;
+    grid-template-columns: repeat(2, 1fr);
+  }
   .home-container,
   .contact-container {
     grid-template-columns: repeat(2, 1fr);
@@ -801,6 +813,9 @@ Media Queries
 }
 /* Large Devices */
 @media screen and (min-width: 1024px) {
+  .container {
+    max-width: 1024px;
+  }
   .header,
   .main,
   .footer-container {
