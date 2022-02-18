@@ -24,6 +24,6 @@ urlpatterns = [
     path('project/', projectView, name='project'),
     path(',', include('project.urls')),
     path('', indexView, name='index'),
-    
+    path('ckeditor/', include('ckeditor_uploader.urls')),
     
 ]

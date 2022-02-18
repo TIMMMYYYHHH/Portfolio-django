@@ -6,15 +6,13 @@
 
 {% block content %}
 <section class="detail section" id="portfolio">
-  <h2 class="section-title">Project {{post.id}}</h2>
+  <!-- <h2 class="section-title">Project {{post.id}}</h2> -->
   <span class="section-subtitle"></span>
   <div class="container project-container-detail">
     <div class="grid-project-detail">
       <div class="project-card">
         <div class="project-card-img detail-img">
-          <a href="{% url 'post_detail' post.slug %}">
-            <img src="{{ post.img }}" alt="">
-          </a>
+          <img src="{{ post.img }}" alt="">
           <span class="project-card-date">
             {{post.created_at|date:'M d, Y'}}
           </span>
@@ -25,13 +23,10 @@
             <a href="#" class="tag"><i class="fab fa-css3-alt portfolio-language-icon"></i></a>
             <a href="#" class="tag"><i class="fab fa-python portfolio-language-icon"></i></a>
           </div>
-          <h3 class="project-card-title-detail">
-            <a href="{% url 'post_detail' post.slug %}">
-              {{ post.title }}
-            </a>
-          </h3>
-          <p>{{post.intro}}</p>
-          <p>{{ post.body }}</p>
+          <h1 class="section-title" style="text-align:left">
+            {{ post.title }}
+            </h2>
+            <p>{{post.body|safe}}</p>
         </div>
       </div>
     </div>

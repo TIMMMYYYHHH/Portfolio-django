@@ -132,20 +132,24 @@ img {
   max-width: 100%;
   height: auto;
 }
+::selection {
+  /* Change highlight background color to black */
+  /* background: var(--first-color); */
+  /* Change highlight text color to red */
+  color: var(--first-color);
+}
 .section {
   padding: 2rem 0rem 4rem;
 }
-.section-titles {
-  font-size: var(--h2-font-size);
-}
+
 .section-subtitle {
   display: block;
   font-size: var(--small-font-size);
   margin-bottom: 3rem;
+  text-align: center;
 }
 
-.section-title,
-.section-subtitle {
+.section-title {
   text-align: center;
 }
 .container {
@@ -444,13 +448,13 @@ Project
 
 .project-card-tag {
   width: 5rem;
-  margin-bottom: 1.25rem;
+  /* margin-bottom: 1.25rem; */
   display: flex;
   justify-content: space-between;
   /* background: red; */
 }
 .tag {
-  padding: 0.5rem;
+  margin-right: 0.5rem;
 }
 .project-card-title {
   font-size: var(--card-title-size);
@@ -749,6 +753,9 @@ Media Queries
     grid-gap: 1rem;
     grid-template-columns: repeat(2, 1fr);
   }
+  .grid-side {
+    display: grid;
+  }
   .home-container,
   .contact-container {
     grid-template-columns: repeat(2, 1fr);
@@ -766,6 +773,18 @@ Media Queries
   .home-container {
     padding-top: 10vh;
     column-gap: 2rem;
+  }
+  .project-container,
+  .grid-side {
+    display: grid;
+    gap: 3rem;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .project-container-page {
+    display: grid;
+    gap: 3rem;
+    grid-template-columns: 1fr;
   }
   .footer-container {
     grid-template-columns: repeat(3, 1fr);
@@ -797,6 +816,18 @@ Media Queries
   .avatar-blob {
     width: 320px;
     height: 320px;
+  }
+  .widget-container {
+    margin-top: -30px;
+  }
+  .grid-side {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+  .project-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
   }
   .contact-form {
     width: 460px;
